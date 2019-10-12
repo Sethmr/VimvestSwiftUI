@@ -8,14 +8,20 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct GoalTypeIcon: View {
     var body: some View {
-        Text("Hello World")
+        HStack(spacing: 15.79.clasp) {
+            ForEach(GoalType.allCases, id: \.self) { type in
+                Circle()
+                    .fill(type.circleGradient)
+                    .frame(diameter: 25.clasp)
+            }
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        GoalTypeIcon()
     }
 }

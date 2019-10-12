@@ -13,15 +13,11 @@ struct OnboardingScrollingView: View {
 
     var body: some View {
         VStack {
-            SwiftUIPagerView(index: $index, pages: (0..<4).map { index in OnboardingPageView(id: index) } )
+            PagerView(
+                index: $index,
+                pages: (0..<OnboardingType.allCases.count).map { index in OnboardingPageView(id: index)
+                }
+            )
         }
     }
 }
-
-#if DEBUG
-struct OnboardingScrollingView_Previews: PreviewProvider {
-    static var previews: some View {
-        GoalTypeIconView()
-    }
-}
-#endif

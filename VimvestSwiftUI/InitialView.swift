@@ -13,7 +13,7 @@ struct InitialView: View {
 
     var body: some View {
         ZStack {
-            nextView
+            startingView
             GoalTypeIconView()
                 .opacity(showSplash ? 1 : 0)
                 .onAppear {
@@ -26,7 +26,7 @@ struct InitialView: View {
         }.edgesIgnoringSafeArea(.all)
     }
 
-    var nextView: some View {
+    var startingView: some View {
         return OnboardingScrollingView()
     }
 }

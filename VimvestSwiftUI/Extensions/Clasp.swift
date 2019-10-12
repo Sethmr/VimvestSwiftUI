@@ -34,7 +34,11 @@ extension UIScreen {
 // MARK: - CGFloat
 extension CGFloat {
 
-    func adjustToScreenSize() -> CGFloat {
+    var ats: CGFloat {
+        return adjustedToScreen
+    }
+
+    var adjustedToScreen: CGFloat {
         switch UIScreen.deviceType {
         case .regular:
             return self * 0.9057971014 // 375.0/414.0
@@ -43,7 +47,7 @@ extension CGFloat {
         }
     }
 
-    func pixelRound() -> CGFloat {
+    var pixelRounded: CGFloat {
         switch UIScreen.main.scale {
         case 3:
             let truncatingRemainder = self.truncatingRemainder(dividingBy: 1)
@@ -66,14 +70,28 @@ extension CGFloat {
         }
     }
 
-    var clasp: CGFloat { return self.adjustToScreenSize().pixelRound() }
+    var clasp: CGFloat { return self.adjustedToScreen.pixelRounded }
 
 }
 
 extension Int {
-    var clasp: CGFloat { return CGFloat(self).clasp }
+
+    var ats: CGFloat {
+        return CGFloat(self).adjustedToScreen
+    }
+    var clasp: CGFloat {
+        return CGFloat(self).clasp
+    }
+
 }
 
 extension Double {
-    var clasp: CGFloat { return CGFloat(self).clasp }
+
+    var ats: CGFloat {
+        return CGFloat(self).adjustedToScreen
+    }
+    var clasp: CGFloat {
+        return CGFloat(self).clasp
+    }
+
 }

@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct SwiftUIPagerView<Content: View & Identifiable>: View {
+struct PagerView<Content: View & Identifiable>: View {
 
     @Binding var index: Int
     @State private var offset: CGFloat = 0

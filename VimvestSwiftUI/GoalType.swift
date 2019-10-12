@@ -47,4 +47,5 @@ enum GoalType: CaseIterable {
             )
         }
     }
+
 }

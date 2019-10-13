@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF53D0B72352C17900497CF3 /* PagerDotControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF53D0B62352C17900497CF3 /* PagerDotControlView.swift */; };
+		BF53D0B92352C8DA00497CF3 /* WhiteContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF53D0B82352C8DA00497CF3 /* WhiteContinueButton.swift */; };
 		BF80C62F2351A41A000F4AF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF80C62E2351A41A000F4AF0 /* AppDelegate.swift */; };
 		BF80C6312351A41A000F4AF0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF80C6302351A41A000F4AF0 /* SceneDelegate.swift */; };
 		BF80C6332351A41A000F4AF0 /* GoalTypeIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF80C6322351A41A000F4AF0 /* GoalTypeIconView.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF53D0B62352C17900497CF3 /* PagerDotControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerDotControlView.swift; sourceTree = "<group>"; };
+		BF53D0B82352C8DA00497CF3 /* WhiteContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteContinueButton.swift; sourceTree = "<group>"; };
 		BF80C62B2351A41A000F4AF0 /* VimvestSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VimvestSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF80C62E2351A41A000F4AF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF80C6302351A41A000F4AF0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				BF80C64F235234D8000F4AF0 /* PagerView.swift */,
+				BF53D0B62352C17900497CF3 /* PagerDotControlView.swift */,
+				BF53D0B82352C8DA00497CF3 /* WhiteContinueButton.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -201,9 +207,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF80C6472351AE5D000F4AF0 /* ViewExtension.swift in Sources */,
+				BF53D0B92352C8DA00497CF3 /* WhiteContinueButton.swift in Sources */,
 				BF80C6492351AFE2000F4AF0 /* Clasp.swift in Sources */,
 				BF80C62F2351A41A000F4AF0 /* AppDelegate.swift in Sources */,
 				BF80C64C23522348000F4AF0 /* OnboardingScrollingView.swift in Sources */,
+				BF53D0B72352C17900497CF3 /* PagerDotControlView.swift in Sources */,
 				BF80C6452351A819000F4AF0 /* GoalType.swift in Sources */,
 				BF80C6522352388C000F4AF0 /* OnboardingPageView.swift in Sources */,
 				BF80C656235247ED000F4AF0 /* OnboardingType.swift in Sources */,

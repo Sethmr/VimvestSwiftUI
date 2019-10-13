@@ -56,7 +56,7 @@ enum OnboardingType: Int, CaseIterable {
         case .giving:
             return "Change the world with\na little bit of change."
         case .split:
-            return "Fund all of your goals, stocks, beliefs, and\ncharities with one, simple deposit."
+            return "Split up your money\nwith one deposit."
         }
     }
 

@@ -45,21 +45,6 @@ struct OnboardingPageView: View, Identifiable {
         }
     }
 
-    func color(from index: Int) -> Color {
-        switch index {
-        case 0:
-            return .blue
-        case 1:
-            return .red
-        case 2:
-            return .yellow
-        case 3:
-            return .purple
-        default:
-            return .black
-        }
-    }
-
 }
 
 

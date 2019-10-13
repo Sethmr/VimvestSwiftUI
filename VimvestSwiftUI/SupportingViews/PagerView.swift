@@ -11,7 +11,7 @@ import SwiftUI
 struct PagerView<Content: View & Identifiable>: View {
 
     @Binding var index: Int
-    @State private var offset: CGFloat = 0
+    @Binding var offset: CGFloat
     @State private var isGestureActive: Bool = false
 
     // 1

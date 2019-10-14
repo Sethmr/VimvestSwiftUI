@@ -6,7 +6,7 @@
 //  Copyright © 2019 Seth Rininger. All rights reserved.
 //
 
-import UIKit
+import SwiftUI
 
 extension UIScreen {
 
@@ -98,6 +98,14 @@ extension CGSize {
 
     var clasp: CGSize {
         return CGSize(width: width.clasp, height: height.clasp)
+    }
+
+}
+
+extension EdgeInsets {
+
+    var clasp: EdgeInsets {
+        return EdgeInsets(top: top.clasp, leading: leading.clasp, bottom: bottom.clasp, trailing: trailing.clasp)
     }
 
 }

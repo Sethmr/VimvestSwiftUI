@@ -24,13 +24,12 @@ struct PagerDotControlView: View {
     }
 
     func diameter(at index: Int) -> CGFloat {
-        print(pagerInfo.pageOffset)
         let diameter: CGFloat = 5.clasp
         switch index {
         case let x where x == pagerInfo.leftPage:
             return diameter + 2.clasp * (1 - pagerInfo.pageOffset)
         case let x where x == pagerInfo.leftPage + 1:
-            return diameter + 2.clasp * pagerInfo.pageOffset
+            return diameter + 2.clasp * (pagerInfo.pageOffset < 0 ? 1 - abs(pagerInfo.pageOffset) : pagerInfo.pageOffset)
         default:
             return diameter
         }
@@ -42,7 +41,7 @@ struct PagerDotControlView: View {
         case let x where x == pagerInfo.leftPage:
             return radius + 2.5.ats * (1 - pagerInfo.pageOffset)
         case let x where x == pagerInfo.leftPage + 1:
-            return radius + 2.5.ats * pagerInfo.pageOffset
+            return radius + 2.5.ats * (pagerInfo.pageOffset < 0 ? 1 - abs(pagerInfo.pageOffset) : pagerInfo.pageOffset)
         default:
             return radius
         }

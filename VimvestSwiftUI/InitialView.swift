@@ -30,11 +30,3 @@ struct InitialView: View {
         return OnboardingScrollingView()
     }
 }
-
-#if DEBUG
-struct InitialView_Previews: PreviewProvider {
-  static var previews: some View {
-    InitialView()
-  }
-}
-#endif

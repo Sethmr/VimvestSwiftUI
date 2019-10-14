@@ -26,6 +26,7 @@
 		BF80C6522352388C000F4AF0 /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF80C6512352388C000F4AF0 /* OnboardingPageView.swift */; };
 		BF80C656235247ED000F4AF0 /* OnboardingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF80C655235247ED000F4AF0 /* OnboardingType.swift */; };
 		BF80C65823525196000F4AF0 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF80C65723525196000F4AF0 /* FontExtension.swift */; };
+		BF91254323540B44008BC4EB /* BasicTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF91254223540B44008BC4EB /* BasicTypeExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		BF80C6512352388C000F4AF0 /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		BF80C655235247ED000F4AF0 /* OnboardingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingType.swift; sourceTree = "<group>"; };
 		BF80C65723525196000F4AF0 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
+		BF91254223540B44008BC4EB /* BasicTypeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTypeExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			children = (
 				BF80C6422351A5A3000F4AF0 /* ColorExtension.swift */,
 				BF80C6462351AE5D000F4AF0 /* ViewExtension.swift */,
+				BF91254223540B44008BC4EB /* BasicTypeExtensions.swift */,
 				BF80C65723525196000F4AF0 /* FontExtension.swift */,
 				BF80C6482351AFE2000F4AF0 /* Clasp.swift */,
 			);
@@ -225,6 +228,7 @@
 				BF80C650235234D8000F4AF0 /* PagerView.swift in Sources */,
 				BF80C65823525196000F4AF0 /* FontExtension.swift in Sources */,
 				BF80C6432351A5A3000F4AF0 /* ColorExtension.swift in Sources */,
+				BF91254323540B44008BC4EB /* BasicTypeExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

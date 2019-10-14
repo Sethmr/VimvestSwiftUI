@@ -24,7 +24,6 @@ struct PagerView<Content: View & Identifiable>: View {
     }
     @State private var isGestureActive: Bool = false
 
-    // 1
     var pages: [Content]
 
     var body: some View {
@@ -37,14 +36,18 @@ struct PagerView<Content: View & Identifiable>: View {
                     }
                 }
             }
-            // 2
+
+            // this a trick to switch between external and internal state changes
             .content.offset(x: self.isGestureActive ? self.offset : -geometry.size.width * CGFloat(self.index))
-            // 3
+
+            // .leading is mandatory if you don't want to translate all offsets to center.
             .frame(width: geometry.size.width, height: nil, alignment: .leading)
             .gesture(DragGesture().onChanged({ value in
-                // 4
+
+                // set the state to local state change
                 self.isGestureActive = true
-                // 5
+
+                // calculate the full offset from the gesture delta (*-1) plus the previous index state
                 self.offset = value.translation.width + -geometry.size.width * CGFloat(self.index)
             }).onEnded({ value in
                 if -value.predictedEndTranslation.width > geometry.size.width / 2, self.index < self.pages.endIndex - 1 {
@@ -53,9 +56,11 @@ struct PagerView<Content: View & Identifiable>: View {
                 if value.predictedEndTranslation.width > geometry.size.width / 2, self.index > 0 {
                     self.index -= 1
                 }
-                // 6
+
+                // at the end set the final index based on the gesture predicted end, while rounding the offset up or down
                 withAnimation { self.offset = -geometry.size.width * CGFloat(self.index) }
-                // 7
+
+                // reset the state to handle external changes to index
                 DispatchQueue.main.async { self.isGestureActive = false }
             }))
         }

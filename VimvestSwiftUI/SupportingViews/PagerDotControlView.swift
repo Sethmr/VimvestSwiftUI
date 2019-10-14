@@ -78,3 +78,11 @@ struct PagerDotControlView: View {
     }
 
 }
+
+#if DEBUG
+struct PagerDotControlView_Previews: PreviewProvider {
+    static var previews: some View {
+        PagerDotControlView(pagerInfo: PagerViewInfo(pageCount: 10))
+    }
+}
+#endif

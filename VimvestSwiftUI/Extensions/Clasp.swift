@@ -8,7 +8,6 @@
 
 import UIKit
 
-// MARK: - UIScreen
 extension UIScreen {
 
     enum DeviceType {
@@ -31,7 +30,6 @@ extension UIScreen {
 
 }
 
-// MARK: - CGFloat
 extension CGFloat {
 
     var ats: CGFloat {
@@ -92,6 +90,14 @@ extension Double {
     }
     var clasp: CGFloat {
         return CGFloat(self).clasp
+    }
+
+}
+
+extension CGSize {
+
+    var clasp: CGSize {
+        return CGSize(width: width.clasp, height: height.clasp)
     }
 
 }

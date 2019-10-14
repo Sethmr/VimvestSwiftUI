@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF258FC32353AABE00D1CD34 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF258FC22353AABE00D1CD34 /* Constant.swift */; };
 		BF53D0B72352C17900497CF3 /* PagerDotControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF53D0B62352C17900497CF3 /* PagerDotControlView.swift */; };
 		BF53D0B92352C8DA00497CF3 /* WhiteContinueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF53D0B82352C8DA00497CF3 /* WhiteContinueButton.swift */; };
 		BF80C62F2351A41A000F4AF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF80C62E2351A41A000F4AF0 /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF258FC22353AABE00D1CD34 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		BF53D0B62352C17900497CF3 /* PagerDotControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerDotControlView.swift; sourceTree = "<group>"; };
 		BF53D0B82352C8DA00497CF3 /* WhiteContinueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteContinueButton.swift; sourceTree = "<group>"; };
 		BF80C62B2351A41A000F4AF0 /* VimvestSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VimvestSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +85,7 @@
 				BF80C62E2351A41A000F4AF0 /* AppDelegate.swift */,
 				BF80C6302351A41A000F4AF0 /* SceneDelegate.swift */,
 				BF80C6322351A41A000F4AF0 /* GoalTypeIconView.swift */,
+				BF258FC22353AABE00D1CD34 /* Constant.swift */,
 				BF80C64D2352281A000F4AF0 /* InitialView.swift */,
 				BF80C654235244F1000F4AF0 /* Onboarding */,
 				BF80C653235244D7000F4AF0 /* SupportingViews */,
@@ -209,6 +212,7 @@
 				BF80C6472351AE5D000F4AF0 /* ViewExtension.swift in Sources */,
 				BF53D0B92352C8DA00497CF3 /* WhiteContinueButton.swift in Sources */,
 				BF80C6492351AFE2000F4AF0 /* Clasp.swift in Sources */,
+				BF258FC32353AABE00D1CD34 /* Constant.swift in Sources */,
 				BF80C62F2351A41A000F4AF0 /* AppDelegate.swift in Sources */,
 				BF80C64C23522348000F4AF0 /* OnboardingScrollingView.swift in Sources */,
 				BF53D0B72352C17900497CF3 /* PagerDotControlView.swift in Sources */,

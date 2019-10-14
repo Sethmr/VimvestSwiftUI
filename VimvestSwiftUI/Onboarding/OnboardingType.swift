@@ -89,4 +89,49 @@ enum OnboardingType: Int, CaseIterable {
             return Image("OnboardingSplit")
         }
     }
+
+    var imageTopSpacing: CGFloat {
+        switch self {
+        case .goals:
+            return 79.clasp + Constant.statusBarHeight
+        case .stocks:
+            return 116.clasp + Constant.statusBarHeight
+        case .beliefs:
+            return 36.clasp + Constant.statusBarHeight
+        case .giving:
+            return 113.clasp + Constant.statusBarHeight
+        case .split:
+            return 0
+        }
+    }
+
+    var imageSize: CGSize {
+        switch self {
+        case .goals:
+            return CGSize(width: 281, height: 184).clasp
+        case .stocks:
+            return CGSize(width: 373, height: 120).clasp
+        case .beliefs:
+            return CGSize(width: 282, height: 279).clasp
+        case .giving:
+            return CGSize(width: 375, height: 144).clasp
+        case .split:
+            return CGSize(width: 344, height: 311).clasp
+        }
+    }
+
+    var imageBotSpacing: CGFloat {
+        switch self {
+        case .goals:
+            return 100.clasp
+        case .stocks:
+            return 127.clasp
+        case .beliefs:
+            return 48.clasp
+        case .giving:
+            return 106.clasp
+        case .split:
+            return 72.clasp
+        }
+    }
 }

@@ -7,11 +7,21 @@
 //
 
 import SwiftUI
+import Combine
 
 struct PagerView<Content: View & Identifiable>: View {
 
-    @Binding var index: Int
-    @Binding var offset: CGFloat
+    @ObservedObject var pagerInfo:  PagerViewInfo
+    @Binding var index: Int {
+        didSet {
+            pagerInfo.index = index
+        }
+    }
+    @State private var offset: CGFloat = 0 {
+        didSet {
+            pagerInfo.offset = offset
+        }
+    }
     @State private var isGestureActive: Bool = false
 
     // 1
@@ -50,4 +60,56 @@ struct PagerView<Content: View & Identifiable>: View {
             }))
         }
     }
+}
+
+
+class PagerViewInfo: ObservableObject {
+
+    var didChange = PassthroughSubject<Void, Never>()
+
+    @Published var pageCount: Int {
+        didSet {
+            didChange.send()
+        }
+    }
+    @Published var pageWidth: CGFloat = 414.clasp {
+        didSet {
+            didChange.send()
+        }
+    }
+    @Published var index: Int = 0 {
+        didSet {
+            withAnimation {
+                offset = -CGFloat(index) * pageWidth
+            }
+        }
+    }
+    @Published var offset: CGFloat = 0 {
+        didSet {
+            didChange.send()
+        }
+    }
+
+    private var pageRatio: CGFloat {
+        return -offset / pageWidth
+    }
+    var leftPage: Int {
+        return Int(floor(pageRatio))
+    }
+    var pageOffset: CGFloat {
+        return pageRatio.truncatingRemainder(dividingBy: 1)
+    }
+
+    init(pageCount: Int) {
+        self.pageCount = pageCount
+    }
+
+    func printInfo() {
+        print("index: \(index)")
+        print("offset: \(offset)")
+        print("pageRatio: \(pageRatio)")
+        print("leftPage: \(leftPage)")
+        print("pageOffset: \(pageOffset)")
+    }
+
 }

@@ -9,42 +9,47 @@
 import SwiftUI
 
 struct OnboardingScrollingView: View {
-    @State var index: Int = 0
-    @State var pageRatio: CGFloat = 0
-    @State var offset: CGFloat = 0 {
+
+    @ObservedObject var pagerInfo = PagerViewInfo(pageCount: OnboardingType.allCases.count)
+    @State var index: Int = 0 {
         didSet {
-            pageRatio = offset / 414.clasp
+            pagerInfo.index = index
         }
     }
 
     var body: some View {
-        VStack {
+        ZStack {
             PagerView(
+                pagerInfo: pagerInfo,
                 index: $index,
-                offset: $offset,
-                pages: (0..<OnboardingType.allCases.count).map { index in
+                pages: (0..<pagerInfo.pageCount).map { index in
                     OnboardingPageView(id: index)
                 }
             )
-            Spacer()
-                .frame(height: 35.clasp)
-            PagerDotControlView(
-                dotCount: OnboardingType.allCases.count,
-                pageRatio: $pageRatio
-            )
-            ZStack {
+            VStack {
+                Spacer()
+                PagerDotControlView(pagerInfo: pagerInfo)
+                Spacer()
+                    .frame(height: 29.clasp)
                 Image("FooterDots")
-                    .frame(width: 414.clasp, height: 121.clasp)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 414.clasp, height: 157.clasp)
+                    .edgesIgnoringSafeArea(.bottom)
+            }
+            VStack {
+                Spacer()
                 WhiteContinueButton {
                     self.continueTapped()
                 }
+                Spacer()
+                    .frame(height: 35.clasp + Constant.bottomSafeArea)
             }
-            Spacer()
-                .frame(height: 35.clasp)
-        }.edgesIgnoringSafeArea(.all)
+        }
     }
 
     private func continueTapped() {
+        guard index < pagerInfo.pageCount - 1 else { return }
         withAnimation {
             index += 1
         }

@@ -9,20 +9,12 @@
 import SwiftUI
 
 struct PagerDotControlView: View {
-    let dotCount: Int
-    @Binding var pageRatio: CGFloat
 
-    private var leftDot: Int {
-        return Int(pageRatio)
-    }
-
-    private var pageOffset: CGFloat {
-        return pageRatio.truncatingRemainder(dividingBy: 1)
-    }
+    @ObservedObject var pagerInfo: PagerViewInfo
 
     var body: some View {
         HStack(spacing: 5.clasp) {
-            ForEach(0..<dotCount, id: \.self) { index in
+            ForEach(0..<pagerInfo.pageCount, id: \.self) { index in
                 Rectangle()
                     .fill(Color.default)
                     .frame(diameter: self.diameter(at: index))
@@ -32,12 +24,13 @@ struct PagerDotControlView: View {
     }
 
     func diameter(at index: Int) -> CGFloat {
+        print(pagerInfo.pageOffset)
         let diameter: CGFloat = 5.clasp
         switch index {
-        case let x where x == leftDot:
-            return diameter + 2.clasp * pageOffset
-        case let x where x == leftDot + 1:
-            return diameter + 2.clasp * (1 - pageOffset)
+        case let x where x == pagerInfo.leftPage:
+            return diameter + 2.clasp * (1 - pagerInfo.pageOffset)
+        case let x where x == pagerInfo.leftPage + 1:
+            return diameter + 2.clasp * pagerInfo.pageOffset
         default:
             return diameter
         }
@@ -46,10 +39,10 @@ struct PagerDotControlView: View {
     private func cornerRadius(at index: Int) -> CGFloat {
         let radius: CGFloat = 1.ats
         switch index {
-        case let x where x == leftDot:
-            return radius + 2.5.ats * pageOffset
-        case let x where x == leftDot + 1:
-            return radius + 2.5.ats * (1 - pageOffset)
+        case let x where x == pagerInfo.leftPage:
+            return radius + 2.5.ats * (1 - pagerInfo.pageOffset)
+        case let x where x == pagerInfo.leftPage + 1:
+            return radius + 2.5.ats * pagerInfo.pageOffset
         default:
             return radius
         }

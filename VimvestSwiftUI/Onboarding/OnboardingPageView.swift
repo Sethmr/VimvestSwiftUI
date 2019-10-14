@@ -18,10 +18,14 @@ struct OnboardingPageView: View, Identifiable {
 
     var body: some View {
         VStack {
-            type.image.resizable()
-                .frame(width: 375.clasp, height: 341.clasp)
             Spacer()
-                .frame(height: 42.clasp)
+                .frame(height: type.imageTopSpacing)
+            type.image
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: type.imageSize.width, height: type.imageSize.height)
+            Spacer()
+                .frame(height: type.imageBotSpacing)
             Text(type.title)
                 .foregroundColor(type.titleColor)
                 .font(.styled(.demibold, size: 20.ats))
